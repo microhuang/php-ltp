@@ -1,3 +1,7 @@
+//g++ ltps.cc -shared -o libltps.so -fPIC -Xlinker -rpath=./ -I ../ltp-3.3.2/include/ltp/ -I ../ltp-3.3.2/thirdparty/boost/include/ -g
+
+
+
 #include <string.h>
 #include <iostream>
 #include <string>
