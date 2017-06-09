@@ -58,7 +58,7 @@ if test "$PHP_PHPLTP" != "no"; then
   dnl ])
   dnl
   PHP_ADD_LIBRARY_WITH_PATH(ltps, ./, PHPLTP_SHARED_LIBADD)
-  PHP_ADD_LIBRARY_WITH_PATH(segmentor, /var/opt/yxd/ltp/ltp-3.3.2/lib/, PHPLTP_SHARED_LIBADD)
+  PHP_ADD_LIBRARY_WITH_PATH(segmentor, ../ltp-3.3.2/lib/, PHPLTP_SHARED_LIBADD)
   PHP_ADD_LIBRARY_WITH_PATH(boost_regex, /usr/lib64/, PHPLTP_SHARED_LIBADD)
   PHP_SUBST(PHPLTP_SHARED_LIBADD)
 
