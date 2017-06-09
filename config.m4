@@ -7,9 +7,9 @@ dnl without editing.
 
 dnl If your extension references something external, use with:
 
-dnl PHP_ARG_WITH(phpltp, for phpltp support,
-dnl Make sure that the comment is aligned:
-dnl [  --with-phpltp             Include phpltp support])
+PHP_ARG_WITH(phpltp, for phpltp support,
+Make sure that the comment is aligned:
+[  --with-phpltp             Include phpltp support])
 
 dnl Otherwise use enable:
 
@@ -57,7 +57,10 @@ if test "$PHP_PHPLTP" != "no"; then
   dnl   -L$PHPLTP_DIR/$PHP_LIBDIR -lm
   dnl ])
   dnl
-  dnl PHP_SUBST(PHPLTP_SHARED_LIBADD)
+  PHP_ADD_LIBRARY_WITH_PATH(myfunc, ./, PHPLTP_SHARED_LIBADD)
+  PHP_ADD_LIBRARY_WITH_PATH(segmentor, /var/opt/yxd/ltp/ltp-3.3.2/lib/, PHPLTP_SHARED_LIBADD)
+  PHP_ADD_LIBRARY_WITH_PATH(boost_regex, /usr/lib64/, PHPLTP_SHARED_LIBADD)
+  PHP_SUBST(PHPLTP_SHARED_LIBADD)
 
-  PHP_NEW_EXTENSION(phpltp, phpltp.c, $ext_shared,, -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
+  PHP_NEW_EXTENSION(phpltp, phpltp.c, $ext_shared, , -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
 fi
